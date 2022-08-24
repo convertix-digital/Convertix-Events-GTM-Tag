@@ -1,4 +1,4 @@
 homepage: "https://convertix.digital"
 versions:
-  - sha: 7383de823b8ab34110326f0f40c3ac81d99cff1f
+  - sha: 4453efdf978bdd5acbfbf55c5f7ea32435c062bb
     changeNotes: Initial release.
