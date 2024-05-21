@@ -510,7 +510,7 @@ else{ gads_eventName = gads_eventName || (data.gads_pixelEventType === 'Conversi
 
 /* Tiktok Pixel */
 if ( data.ttk_pixelEventType === 'No Event' ) { ttk_eventName = '0'; }
-else{ ttk_eventName = ttk_eventName || (data.ttk_pixelEventType === 'Standard' ? data.ttk_stdEventName : '0'); }
+else{ ttk_eventName = ttk_eventName || (data.ttk_pixelEventType === 'Custom' ? data.ttk_ctmEventName : data.ttk_stdEventName); }
 
 /* Linkedin Insight Tag */
 if ( data.in_pixelEventType === 'No Event' ) { in_eventName = '0'; }
