@@ -519,6 +519,7 @@ var eventMapping =
   {'varName': 'ga4_pixelEvent'        , 'varValue': ga4_eventName},
   {'varName': 'gads_conversionLabel'  , 'varValue': gads_eventName},
   {'varName': 'ttk_pixelEvent'        , 'varValue': ttk_eventName},
+  {'varName': 'in_pixelEvent'         , 'varValue': in_eventName},
   {'varName': 'ctxTK'                 , 'varValue': ctxTK}
 ];
 
