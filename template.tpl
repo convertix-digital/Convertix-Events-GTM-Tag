@@ -1,4 +1,4 @@
-﻿___TERMS_OF_SERVICE___
+___TERMS_OF_SERVICE___
 
 By creating or modifying this file you agree to Google Tag Manager's Community
 Template Gallery Developer Terms of Service available at
@@ -11,10 +11,14 @@ ___INFO___
 {
   "type": "TAG",
   "id": "cvt_temp_public_id",
-  "version": 1,
+  "version": 1.4.4,
   "securityGroups": [],
-  "displayName": "Convertix Eventos PT-BR",
-  "categories": ["CONVERSIONS", "LEAD_GENERATION", "ADVERTISING"],
+  "displayName": "Convertix Eventos PT-BR (v1.4.4)",
+  "categories": [
+    "CONVERSIONS",
+    "LEAD_GENERATION",
+    "ADVERTISING"
+  ],
   "brand": {
     "id": "github.com_TD-turingdigital",
     "displayName": "Convertix",
@@ -258,10 +262,24 @@ ___TEMPLATE_PARAMETERS___
               {
                 "type": "TEXT",
                 "name": "ga4_ctmEventName",
-                "displayName": "Digite o nome do evento personalizado",
-                "simpleValueType": true
+                "displayName": "",
+                "simpleValueType": true,
+                "valueValidators": [
+                  {
+                    "type": "NON_EMPTY"
+                  },
+                  {
+                    "type": "REGEX",
+                    "args": [
+                      "^[A-Za-z0-9_]*$"
+                    ],
+                    "errorMessage": "Somente números, letras e underline \"_\", não pode conter espaços, hífen, ou letras com acentos.",
+                    "enablingConditions": []
+                  }
+                ]
               }
-            ]
+            ],
+            "help": "Não usar espaços e caracteres especiais"
           },
           {
             "value": "No Event",
@@ -399,18 +417,6 @@ ___TEMPLATE_PARAMETERS___
             ]
           },
           {
-            "value": "Custom",
-            "displayValue": "Evento Personalizado",
-            "subParams": [
-              {
-                "type": "TEXT",
-                "name": "ttk_ctmEventName",
-                "displayName": "Digite Seu Evento Personalizado",
-                "simpleValueType": true
-              }
-            ]
-          },
-          {
             "value": "No Event",
             "displayValue": "Não Enviar Evento"
           }
@@ -504,7 +510,7 @@ else{ gads_eventName = gads_eventName || (data.gads_pixelEventType === 'Conversi
 
 /* Tiktok Pixel */
 if ( data.ttk_pixelEventType === 'No Event' ) { ttk_eventName = '0'; }
-else{ ttk_eventName = ttk_eventName || (data.ttk_pixelEventType === 'Custom' ? data.ttk_ctmEventName : data.ttk_stdEventName); }
+else{ ttk_eventName = ttk_eventName || (data.ttk_pixelEventType === 'Standard' ? data.ttk_stdEventName : '0'); }
 
 /* Linkedin Insight Tag */
 if ( data.in_pixelEventType === 'No Event' ) { in_eventName = '0'; }
